@@ -3,6 +3,9 @@ import unittest
 from pytml import html
 
 class PytmlHTMLTestCase(unittest.TestCase):
+    def test_should_fail(self):
+        self.assertTrue(False)
+    
     def test_html_a(self):
         render = html.A("Visit W3Schools.com!", href="https://www.w3schools.com").render()
         expected = \
