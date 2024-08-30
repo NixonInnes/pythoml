@@ -8,7 +8,7 @@ def try_render(item: Any, indent_level: int = 0, indent_str: str = "  ") -> str:
 
     try:
         return item.render(indent_level, indent_str)
-    except:
+    except Exception:
         return indent_str * indent_level + str(item)
 
 
@@ -20,8 +20,8 @@ class Tag:
     _has_closer: bool
 
     _settings_word_map: Dict[str, str] = {
-        "class_": "class", 
-        "for_": "for", 
+        "class_": "class",
+        "for_": "for",
         "id_": "id",
         "type_": "type"
     }
@@ -31,7 +31,7 @@ class Tag:
         self.__logger: logging.Logger = logging.getLogger(self.__class__.__name__)
         self.content = list(content)
         self.kwargs: Dict[str, str | bool] = self._sanitise_settings(**kwargs)
-    
+
     def __call__(self, *content: Any, **kwargs: Union[str, bool]) -> Self:
         return self.add(*content).set(**kwargs)
 
@@ -42,12 +42,13 @@ class Tag:
     def set(self, **kwargs) -> Self:
         self.kwargs.update(self._sanitise_settings(**kwargs))
         return self
-    
+
     def render(self, indent_level: int = 0, indent_str: Optional[str] = None) -> str:
         if indent_str is None:
             indent_str = self._indent
         settings: str = self._render_settings()
-        opener: str = f"{indent_str*indent_level}{self._braces[0]}{self._tag}{" " + settings if settings else ""}{self._braces[1]}"
+        opener: str = f"{indent_str*indent_level}{self._braces[0]}{self._tag}" + \
+                      f"{" " + settings if settings else ""}{self._braces[1]}"
 
         if not self._has_closer:
             if len(self.content) > 0:
@@ -65,7 +66,7 @@ class Tag:
         )
 
         return self._content_delimiter.join([opener] + content + [closer])
-    
+
     def _sanitise_settings(self, **settings: str | bool) -> Dict[str, str | bool]:
         return {self._sanitise_key(k): v for k, v in settings.items()}
 
