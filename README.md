@@ -1,4 +1,5 @@
-# Pytml
+# Pytml  
+[![Tests](https://github.com/NixonInnes/pytml/actions/workflows/tests.yml/badge.svg)](https://github.com/NixonInnes/pytml/actions/workflows/tests.yml)  
 
 Generate HTML with Python.  
 
