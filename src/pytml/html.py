@@ -51,7 +51,7 @@ Col: Type[Tag] = tag_factory(tag="col", has_closer=False)
 
 Colgroup: Type[Tag] = tag_factory(tag="colgroup")
 
-Comment: Callable[[str], str] = lambda x: f"<!-- {x} -->"
+Comment: Callable[[str], str] = lambda x: f"<!-- {x} -->" # noqa E731 - lambda is used for a simple function
 # tag_factory(tag="", braces=("<!--", "-->"), has_closer=False)
 
 Data: Type[Tag] = tag_factory(tag="data")
@@ -110,7 +110,7 @@ Hr: Type[Tag] = tag_factory(tag="hr", has_closer=False)
 
 Html: Type[Tag] = tag_factory(tag="html")
 
-I: Type[Tag] = tag_factory(tag="i")
+I: Type[Tag] = tag_factory(tag="i") #noqa E741 - ambiguous variable name. 'I' is used to represent the 'i' tag
 
 Iframe: Type[Tag] = tag_factory(tag="iframe")
 

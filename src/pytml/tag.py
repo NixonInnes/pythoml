@@ -23,7 +23,7 @@ class Tag:
         "class_": "class",
         "for_": "for",
         "id_": "id",
-        "type_": "type"
+        "type_": "type",
     }
     _settings_char_map: Dict[str, str] = {"_": "-"}
 
@@ -47,8 +47,10 @@ class Tag:
         if indent_str is None:
             indent_str = self._indent
         settings: str = self._render_settings()
-        opener: str = f"{indent_str*indent_level}{self._braces[0]}{self._tag}" + \
-                      f"{" " + settings if settings else ""}{self._braces[1]}"
+        opener: str = (
+            f"{indent_str*indent_level}{self._braces[0]}{self._tag}"
+            + f"{" " + settings if settings else ""}{self._braces[1]}"
+        )
 
         if not self._has_closer:
             if len(self.content) > 0:
