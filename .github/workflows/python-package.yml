@@ -27,9 +27,12 @@ jobs:
         curl -LsSf https://astral.sh/uv/install.sh | sh
         uv sync
     - name: Lint with ruff
+    - name: Lint with ruff
       run: |
+        uvx ruff check --output-format=github src
         
     - name: Test with unittest
       run: |
         uv run python -m unittest discover -s tests/ -v
+
   
