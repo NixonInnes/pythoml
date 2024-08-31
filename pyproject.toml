@@ -1,5 +1,5 @@
 [project]
-name = "pytml"
+name = "pythoml"
 version = "0.1.0"
 description = "Generate HTML with Python"
 readme = "README.md"

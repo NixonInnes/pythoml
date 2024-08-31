@@ -1,24 +1,24 @@
-# Pytml  
-[![Tests](https://github.com/NixonInnes/pytml/actions/workflows/tests.yml/badge.svg)](https://github.com/NixonInnes/pytml/actions/workflows/tests.yml)  
+# Pythoml  
+[![Tests](https://github.com/NixonInnes/pythoml/actions/workflows/tests.yml/badge.svg)](https://github.com/NixonInnes/pythoml/actions/workflows/tests.yml)  
 
 Generate HTML with Python.  
 
-Pytml provides a set of classes which render into HTML tags, allowing you to define HTML in code.
+Pythoml provides a set of classes which render into HTML tags, allowing you to define HTML in code.
 
 
 > ⚠️ **CAUTION**  
 > It is important to sanitise any strings from an external source (e.g. a user input or database) which are used to render anything in a browser (e.g. HTML).  
-> Pytml **does not** provide any sanitisation. It is up to the developer to include that where necessary. 
+> Pythoml **does not** provide any sanitisation. It is up to the developer to include that where necessary. 
 
 ## Useage
 
-The `pytml.html` module contains `Tag` classes for each [HTML5 tag](https://www.w3schools.com/TAGS/default.asp).  
+The `Pythoml.html` module contains `Tag` classes for each [HTML5 tag](https://www.w3schools.com/TAGS/default.asp).  
 The class names match their respective HTML tags, for example: `html.A` for `<a>...</a>` and `html.Div` for `<div>...</div>`.  
-For the complete list please see [html.py](/src/pytml/html.py).  
+For the complete list please see [html.py](/src/pythoml/html.py).  
 
 Creating a `Tag`:
 ```python
-from pytml import html
+from Pythoml import html
 
 ex = html.P("This is a paragraph")
 ```

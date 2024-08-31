@@ -1,8 +1,8 @@
 import unittest
 
-from pytml import html
+from pythoml import html
 
-class PytmlHTMLTestCase(unittest.TestCase):
+class PythomlHTMLTestCase(unittest.TestCase):
     def test_html_a(self):
         render = html.A("Visit W3Schools.com!", href="https://www.w3schools.com").render()
         expected = \

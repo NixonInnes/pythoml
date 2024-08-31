@@ -1,6 +1,6 @@
 from typing import Callable, Type
 
-from pytml.tag import Tag, tag_factory
+from pythoml.tag import Tag, tag_factory
 
 
 def make_html_doc(root_tag: Tag) -> str:

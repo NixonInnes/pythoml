@@ -1,6 +1,6 @@
 import unittest
 
-from pytml.tag import Tag, tag_factory
+from pythoml.tag import Tag, tag_factory
 
 class PytmlTagTestCase(unittest.TestCase):
     def test_tag_factory_output(self):
