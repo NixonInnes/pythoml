@@ -10,6 +10,14 @@ Pythoml provides a set of classes which render into HTML tags, allowing you to d
 > It is important to sanitise any strings from an external source (e.g. a user input or database) which are used to render anything in a browser (e.g. HTML).  
 > Pythoml **does not** provide any sanitisation. It is up to the developer to include that where necessary. 
 
+## Install
+Pythonml can be installed from PyPI:
+```bash
+pip install pythoml
+```
+
+Alternatively, you can download a specific version from the [Releases](https://github.com/NixonInnes/pythoml/releases).  
+
 ## Useage
 
 The `Pythoml.html` module contains `Tag` classes for each [HTML5 tag](https://www.w3schools.com/TAGS/default.asp).  
